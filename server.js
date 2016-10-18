@@ -2,6 +2,8 @@ var express = require('express');
 
 var app = express();
 
+var port = process.env.PORT || 8080;
+
 app.get('/', (req, res) => {
     res.end("Add something to the query ie. http://thissite/somequery");
 });
@@ -22,4 +24,4 @@ app.get('/:query', (req, res) => {
     res.json(result);
 });
 
-app.listen(8080);
+app.listen(port);
